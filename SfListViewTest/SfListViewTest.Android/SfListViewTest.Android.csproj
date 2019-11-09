@@ -102,7 +102,7 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ColorPickerTest\SfListViewTest.csproj">
+    <ProjectReference Include="..\SfListViewTest\SfListViewTest.csproj">
       <Project>{7710BCD1-A071-4E10-837E-CC059B9AEED5}</Project>
       <Name>SfListViewTest</Name>
     </ProjectReference>
