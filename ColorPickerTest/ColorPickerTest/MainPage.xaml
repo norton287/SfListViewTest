@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:SfListViewTest;assembly=SfListViewTest"
+             xmlns:viewModels="clr-namespace:SfListViewTest;assembly=SfListViewTest"
+             x:DataType="viewModels:MainPageViewModel"
+             mc:Ignorable="d"
+             x:Class="SfListViewTest.MainPage"
+             x:Name="XamlPage">
+
+    <StackLayout Orientation="Horizontal"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="Center"
+                 Margin="15,15,15,15">
+        <listview:SfListView x:Name="listView" ItemSize="50"
+                             ItemsSource="{Binding ColorsObservableCollection, Mode=Default}"
+                             ItemTapped="ListView_OnItemTapped"
+                             SelectionMode="SingleDeselect"
+                             SelectionGesture="Tap" >
+            <listview:SfListView.LayoutManager>
+                <listview:GridLayout>
+                    <listview:GridLayout.SpanCount>
+                        <OnPlatform x:TypeArguments="x:Int32">
+                            <On Platform="UWP">
+                                <OnIdiom x:TypeArguments="x:Int32"
+                                         Phone="1"
+                                         Tablet="2"
+                                         Desktop="4" />
+                            </On>
+
+                            <On Platform="Android">
+                                <OnIdiom x:TypeArguments="x:Int32"
+                                         Phone="2"
+                                         Tablet="2" />
+                            </On>
+
+                            <On Platform="iOS">
+                                <OnIdiom x:TypeArguments="x:Int32"
+                                         Phone="1"
+                                         Tablet="2" />
+                            </On>
+                        </OnPlatform>
+                    </listview:GridLayout.SpanCount>
+                </listview:GridLayout>
+            </listview:SfListView.LayoutManager>
+            <listview:SfListView.ItemTemplate>
+                <DataTemplate x:DataType="models:Colors">
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Label Text="{Binding BackGroundColor}"
+                                       Grid.Column="0"
+                                       Grid.Row="0"
+                                       BackgroundColor="{Binding BgColor, Mode=Default}"
+                                       TextColor="{Binding FntColor, Mode=Default}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+                                <Label Text="{Binding ColorName}"
+                                       Grid.Column="0"
+                                       Grid.Row="1"
+                                       BackgroundColor="{Binding BgColor, Mode=Default}"
+                                       TextColor="{Binding FntColor, Mode=Default}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </listview:SfListView.ItemTemplate>
+        </listview:SfListView>
+    </StackLayout>
+
+</ContentPage>
