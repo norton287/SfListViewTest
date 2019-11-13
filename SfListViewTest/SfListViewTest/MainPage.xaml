@@ -19,9 +19,11 @@ xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfL
                              ItemsSource="{Binding ColorsObservableCollection, Mode=Default}"
                              ItemTapped="ListView_OnItemTapped"
                              SelectionMode="SingleDeselect"
-                             SelectionGesture="Tap" >
+                             SelectionGesture="Tap"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="FillAndExpand">
             <listview:SfListView.LayoutManager>
-                <listview:GridLayout>
+                <listview:GridLayout x:Name="gridLayout">
                     <listview:GridLayout.SpanCount>
                         <OnPlatform x:TypeArguments="x:Int32">
                             <On Platform="UWP">

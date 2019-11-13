@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using Syncfusion.ListView.XForms;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using ItemTappedEventArgs = Syncfusion.ListView.XForms.ItemTappedEventArgs;
 
@@ -10,6 +12,9 @@ namespace SfListViewTest
     public partial class MainPage : ContentPage, INotifyPropertyChanged
     {
         private readonly MainPageViewModel _viewModel;
+
+        private double _width;
+        private double _height;
 
         public MainPage()
         {
@@ -26,6 +31,26 @@ namespace SfListViewTest
 
             //Build picker list of color names and colors
             _viewModel.BuildColorsList();
+        }
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height); //must be called
+
+            if (_width == width && _height == height) return;
+
+            _width = width;
+            _height = height;
+
+            if (width > height)
+            {
+                if (DeviceInfo.Idiom == DeviceIdiom.Desktop)
+                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 4 };
+                if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
+                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 2 };
+                if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+                   listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 4 };
+            }
         }
 
         private void ListView_OnItemTapped(object sender, ItemTappedEventArgs e)
