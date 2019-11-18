@@ -42,14 +42,24 @@ namespace SfListViewTest
             _width = width;
             _height = height;
 
-            if (!(width > height)) return;
-
-            if (DeviceInfo.Idiom == DeviceIdiom.Desktop)
-                listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 4 };
-            if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
-                listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 2 };
-            if (DeviceInfo.Idiom == DeviceIdiom.Phone)
-                listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 4 };
+            if(width > height)
+            {
+                if (DeviceInfo.Idiom == DeviceIdiom.Desktop)
+                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 3 };
+                if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
+                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 3 };
+                if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 4 };
+            }
+            else if (height > width)
+            {
+                if (DeviceInfo.Idiom == DeviceIdiom.Desktop)
+                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 2 };
+                if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
+                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 2 };
+                if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 2 };
+            }
         }
 
         private void ListView_OnItemTapped(object sender, ItemTappedEventArgs e)
