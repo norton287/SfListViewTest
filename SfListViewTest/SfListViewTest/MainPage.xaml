@@ -13,13 +13,13 @@ xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfL
              x:DataType="viewModels:MainPageViewModel"
              mc:Ignorable="d"
              x:Class="SfListViewTest.MainPage"
-             x:Name="XamlPage">
+             x:Name="XamlPage"
+             BackgroundColor="Beige">
     <ContentPage.Content>
-        <StackLayout Orientation="Horizontal"
-                     HorizontalOptions="FillAndExpand"
-                     VerticalOptions="Center"
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
                      Margin="15,15,15,15">
-            <!--<StackLayout>
+            <StackLayout>
                 <expander:SfExpander x:Name="Expander"
                                              HeaderBackgroundColor="Transparent"
                                              BackgroundColor="Transparent"
@@ -42,8 +42,7 @@ xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfL
                                    HorizontalOptions="CenterAndExpand"
                                    VerticalOptions="Center"
                                    VerticalTextAlignment="Center"
-                                   HorizontalTextAlignment="Center"
-                                   IsVisible="{Binding IsExpanded, Mode=Default}" />
+                                   HorizontalTextAlignment="Center"/>
                         </StackLayout>
                     </expander:SfExpander.Header>
                     <expander:SfExpander.Content>
@@ -109,37 +108,22 @@ xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfL
                                                          BackgroundColor="Green">
                                     <chip:SfButton.Content>
                                         <Grid HorizontalOptions="Center" VerticalOptions="Center">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="45" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-                                            <Grid Padding="15,0,5,0">
-                                                <Label Text="Button"
-                                                               HorizontalTextAlignment="Start"
-                                                               VerticalOptions="Center"
-                                                               VerticalTextAlignment="Center"
-                                                               HorizontalOptions="Start"
-                                                               FontSize="25">
+                                            <Label HorizontalOptions="Center"
+                                                   HorizontalTextAlignment="Start"
+                                                   TextColor="White"
+                                                   VerticalTextAlignment="Center"
+                                                   VerticalOptions="Center"
+                                                   LineBreakMode="NoWrap"
+                                                   Text="Save">
                                                 </Label>
                                             </Grid>
-                                            <Grid Grid.Column="1">
-                                                <Label HorizontalOptions="Center"
-                                                               HorizontalTextAlignment="Start"
-                                                               TextColor="White"
-                                                               VerticalTextAlignment="Center"
-                                                               VerticalOptions="Center"
-                                                               LineBreakMode="NoWrap"
-                                                               Text="Save">
-                                                </Label>
-                                            </Grid>
-                                        </Grid>
                                     </chip:SfButton.Content>
                                 </chip:SfButton>
                             </StackLayout>
                         </StackLayout>
                     </expander:SfExpander.Content>
                 </expander:SfExpander>
-            </StackLayout>-->
+            </StackLayout>
             <StackLayout>
                 <listview:SfListView x:Name="listView" ItemSize="50"
                                      ItemsSource="{Binding ColorsObservableCollection, Mode=Default}"
