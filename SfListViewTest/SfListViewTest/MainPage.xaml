@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:chip="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-xmlns:expander="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms"
-xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             xmlns:chip="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:expander="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms"
+             xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -15,6 +16,12 @@ xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfL
              x:Class="SfListViewTest.MainPage"
              x:Name="XamlPage"
              BackgroundColor="Beige">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <models:NegateBooleanConverter
+                x:Key="Inverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"
@@ -25,6 +32,8 @@ xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfL
                                              BackgroundColor="Transparent"
                                              DynamicSizeMode="Content"
                                              IsExpanded="{Binding IsExpanded, Mode=TwoWay}"
+                                             Expanded="Expander_OnExpanded"
+                                             Collapsed="Expander_OnCollapsed"
                                              Margin="15,0,15,0">
                     <expander:SfExpander.Header>
                         <StackLayout Orientation="Horizontal"
@@ -34,16 +43,30 @@ xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfL
                             <StackLayout.HeightRequest>
                                 <x:OnPlatform Android="50" iOS="30" UWP="20" />
                             </StackLayout.HeightRequest>
+                            <Label
+                                        Text="Tap Here To Add A List Name OR Tap A List Entry To Edit It"
+                                        FontSize="16"
+                                        TextColor="Black"
+                                        FontAttributes="Bold"
+                                        FontFamily="{StaticResource RobotoBold}"
+                                        LineBreakMode="WordWrap"
+                                        HorizontalOptions="CenterAndExpand"
+                                        VerticalOptions="Center"
+                                        VerticalTextAlignment="Center"
+                                        HorizontalTextAlignment="Center"
+                                        IsVisible="{Binding IsExpanded, Mode=OneWay, Converter={StaticResource Inverter}}" />
                             <Label Text="Tap Here To Close The Editor"
-                                   FontSize="16"
-                                   TextColor="Black"
-                                   FontAttributes="Bold"
-                                   LineBreakMode="WordWrap"
-                                   HorizontalOptions="CenterAndExpand"
-                                   VerticalOptions="Center"
-                                   VerticalTextAlignment="Center"
-                                   HorizontalTextAlignment="Center"/>
-                        </StackLayout>
+                                           FontSize="16"
+                                           TextColor="Black"
+                                           FontAttributes="Bold"
+                                           FontFamily="{StaticResource RobotoBold}"
+                                           LineBreakMode="WordWrap"
+                                           HorizontalOptions="CenterAndExpand"
+                                           VerticalOptions="Center"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"
+                                           IsVisible="{Binding IsExpanded, Mode=Default}" />
+                            </StackLayout>
                     </expander:SfExpander.Header>
                     <expander:SfExpander.Content>
                         <StackLayout x:Name="EditLayout"

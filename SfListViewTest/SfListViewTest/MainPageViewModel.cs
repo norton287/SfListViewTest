@@ -7,6 +7,8 @@ namespace SfListViewTest
 {
     public class MainPageViewModel
     {
+        #region Properties and Fields
+
         private bool _isExpanded;
 
         public bool IsExpanded
@@ -22,6 +24,8 @@ namespace SfListViewTest
         private readonly List<Colors> SubColors = new List<Colors>();
 
         public ObservableCollection<Colors> ColorsObservableCollection { get; set; }
+
+        #endregion
 
         public MainPageViewModel()
         {

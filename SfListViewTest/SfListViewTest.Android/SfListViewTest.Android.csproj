@@ -81,6 +81,12 @@
     <Compile Include="CustomLabelRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
+    <AndroidAsset Include="Assets\Segoe_MDL2_Assets.ttf" />
+    <AndroidAsset Include="Assets\FontAwesome5Brands-Regular.otf" />
+    <AndroidAsset Include="Assets\FontAwesome5Free-Regular.otf" />
+    <AndroidAsset Include="Assets\FontAwesome5Free-Solid.otf" />
+    <AndroidAsset Include="Assets\Roboto-Bold.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
