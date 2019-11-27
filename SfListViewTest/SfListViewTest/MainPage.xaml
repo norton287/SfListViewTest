@@ -37,36 +37,36 @@
                                              Margin="15,0,15,0">
                     <expander:SfExpander.Header>
                         <StackLayout Orientation="Horizontal"
-                                             HorizontalOptions="FillAndExpand"
-                                             VerticalOptions="Center"
-                                             BackgroundColor="Transparent">
+                                     HorizontalOptions="FillAndExpand"
+                                     VerticalOptions="Center"
+                                     BackgroundColor="Transparent">
                             <StackLayout.HeightRequest>
                                 <x:OnPlatform Android="50" iOS="30" UWP="20" />
                             </StackLayout.HeightRequest>
                             <Label
-                                        Text="Tap Here To Add A List Name OR Tap A List Entry To Edit It"
-                                        FontSize="16"
-                                        TextColor="Black"
-                                        FontAttributes="Bold"
-                                        FontFamily="{StaticResource RobotoBold}"
-                                        LineBreakMode="WordWrap"
-                                        HorizontalOptions="CenterAndExpand"
-                                        VerticalOptions="Center"
-                                        VerticalTextAlignment="Center"
-                                        HorizontalTextAlignment="Center"
-                                        IsVisible="{Binding IsExpanded, Mode=OneWay, Converter={StaticResource Inverter}}" />
+                                Text="Tap Here To Add A List Name OR Tap A List Entry To Edit It"
+                                FontSize="16"
+                                TextColor="Black"
+                                FontAttributes="Bold"
+                                FontFamily="{StaticResource RobotoBold}"
+                                LineBreakMode="WordWrap"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Center"
+                                IsVisible="{Binding IsExpanded, Mode=OneWay, Converter={StaticResource Inverter}}" />
                             <Label Text="Tap Here To Close The Editor"
-                                           FontSize="16"
-                                           TextColor="Black"
-                                           FontAttributes="Bold"
-                                           FontFamily="{StaticResource RobotoBold}"
-                                           LineBreakMode="WordWrap"
-                                           HorizontalOptions="CenterAndExpand"
-                                           VerticalOptions="Center"
-                                           VerticalTextAlignment="Center"
-                                           HorizontalTextAlignment="Center"
-                                           IsVisible="{Binding IsExpanded, Mode=Default}" />
-                            </StackLayout>
+                                   FontSize="16"
+                                   TextColor="Black"
+                                   FontAttributes="Bold"
+                                   FontFamily="{StaticResource RobotoBold}"
+                                   LineBreakMode="WordWrap"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="Center"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center"
+                                   IsVisible="{Binding IsExpanded, Mode=Default}" />
+                        </StackLayout>
                     </expander:SfExpander.Header>
                     <expander:SfExpander.Content>
                         <StackLayout x:Name="EditLayout"
