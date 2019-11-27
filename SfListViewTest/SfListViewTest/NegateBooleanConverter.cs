@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace SfListViewTest
 {
-    class NegateBooleanConverter : IValueConverter
+    public class NegateBooleanConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
