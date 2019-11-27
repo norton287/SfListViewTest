@@ -1,11 +1,24 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace SfListViewTest
 {
     public class MainPageViewModel
     {
+        private bool _isExpanded;
+
+        public bool IsExpanded
+        {
+            get => _isExpanded;
+            set
+            {
+                _isExpanded = value;
+                OnPropertyChanged("IsExpanded");
+            }
+        }
+
         private readonly List<Colors> SubColors = new List<Colors>();
 
         public ObservableCollection<Colors> ColorsObservableCollection { get; set; }
@@ -1066,6 +1079,13 @@ namespace SfListViewTest
             {
                 ColorsObservableCollection?.Add(subColor);
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
