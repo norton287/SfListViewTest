@@ -34,7 +34,7 @@ namespace SfListViewTest
 
         public void DoUpdate(Colors item)
         {
-            int index = ColorsObservableCollection.IndexOf(item);
+            var index = ColorsObservableCollection.IndexOf(item);
 
             ColorsObservableCollection.Remove(item);
 

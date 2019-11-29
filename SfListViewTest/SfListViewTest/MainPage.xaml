@@ -32,8 +32,6 @@
                                              BackgroundColor="Transparent"
                                              DynamicSizeMode="Content"
                                              IsExpanded="{Binding IsExpanded, Mode=TwoWay}"
-                                             Expanded="Expander_OnExpanded"
-                                             Collapsed="Expander_OnCollapsed"
                                              Margin="15,0,15,0">
                     <expander:SfExpander.Header>
                         <StackLayout Orientation="Horizontal"

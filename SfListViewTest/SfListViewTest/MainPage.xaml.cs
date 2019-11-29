@@ -76,15 +76,5 @@ namespace SfListViewTest
 
 
         }
-
-        private void Expander_OnExpanded(object sender, ExpandedAndCollapsedEventArgs e)
-        {
-            _viewModel.IsExpanded = true;
-        }
-
-        private void Expander_OnCollapsed(object sender, ExpandedAndCollapsedEventArgs e)
-        {
-            _viewModel.IsExpanded = false;
-        }
     }
 }
