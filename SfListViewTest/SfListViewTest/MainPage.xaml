@@ -150,7 +150,7 @@
                 </expander:SfExpander>
             </StackLayout>
             <StackLayout Grid.Row="1">
-                <listview:SfListView x:Name="listView" ItemSize="50"
+                <listview:SfListView x:Name="ListView" ItemSize="50"
                                      ItemsSource="{Binding ColorsObservableCollection, Mode=Default}"
                                      ItemTapped="ListView_OnItemTapped"
                                      SelectionMode="SingleDeselect"

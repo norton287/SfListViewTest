@@ -46,20 +46,20 @@ namespace SfListViewTest
             if(width > height)
             {
                 if (DeviceInfo.Idiom == DeviceIdiom.Desktop)
-                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 3 };
+                    ListView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 3 };
                 if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
-                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 3 };
+                    ListView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 3 };
                 if (DeviceInfo.Idiom == DeviceIdiom.Phone)
-                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 4 };
+                    ListView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 4 };
             }
             else if (height > width)
             {
                 if (DeviceInfo.Idiom == DeviceIdiom.Desktop)
-                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 2 };
+                    ListView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 2 };
                 if (DeviceInfo.Idiom == DeviceIdiom.Tablet)
-                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 2 };
+                    ListView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 2 };
                 if (DeviceInfo.Idiom == DeviceIdiom.Phone)
-                    listView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 2 };
+                    ListView.LayoutManager = gridLayout = new GridLayout() { SpanCount = 2 };
             }
         }
 
@@ -67,11 +67,11 @@ namespace SfListViewTest
         {
             if (!(e.ItemData is Colors item)) return;
 
-            var index = listView.DataSource.DisplayItems.IndexOf(item);
+            var index = ListView.DataSource.DisplayItems.IndexOf(item);
             
             _viewModel.DoUpdate(item);
 
-            listView.LayoutManager.ScrollToRowIndex(index, Syncfusion.ListView.XForms.ScrollToPosition.Center, true);
+            ListView.LayoutManager.ScrollToRowIndex(index, Syncfusion.ListView.XForms.ScrollToPosition.Center, true);
 
 
 
