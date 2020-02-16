@@ -16,7 +16,7 @@
              x:Class="SfListViewTest.MainPage"
              x:Name="XamlPage"
              BackgroundColor="Beige">
-    <ContentPage.Resources>
+	<ContentPage.Resources>
         <ResourceDictionary>
             <models:NegateBooleanConverter
                 x:Key="Inverter" />
@@ -195,13 +195,24 @@
                                             <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
-                                        <Label Text="{Binding BackGroundColor}"
-                                               Grid.Column="0"
-                                               Grid.Row="0"
-                                               BackgroundColor="{Binding BgColor, Mode=Default}"
-                                               TextColor="{Binding FntColor, Mode=Default}"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="Center" />
+	                                    <StackLayout Orientation="Horizontal"
+	                                                 Grid.Column="0"
+	                                                 Grid.Row="0"
+	                                                 HorizontalOptions="FillAndExpand"
+	                                                 VerticalOptions="FillAndExpand"
+	                                                 BackgroundColor="{Binding BgColor}">
+		                                    <Image x:Name="Help"
+		                                           Source="{StaticResource Cart}"
+		                                           BackgroundColor="Transparent"
+		                                           HeightRequest="{OnIdiom Default=33, Tablet=28, Phone=28}"
+		                                           WidthRequest="{OnIdiom Default=33, Tablet=28, Phone=28}"
+		                                           HorizontalOptions="End"
+		                                           VerticalOptions="Center" />
+		                                    <Label Text="{Binding BackGroundColor}"
+		                                           BackgroundColor="{Binding BgColor, Mode=Default}"
+		                                           TextColor="{Binding FntColor, Mode=Default}"
+		                                           HorizontalOptions="Center"
+		                                           VerticalOptions="Center" /></StackLayout>
                                         <Label Text="{Binding ColorName}"
                                                Grid.Column="0"
                                                Grid.Row="1"
