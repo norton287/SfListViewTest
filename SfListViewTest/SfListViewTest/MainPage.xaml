@@ -207,7 +207,11 @@
 		                                           HeightRequest="{OnIdiom Default=33, Tablet=28, Phone=28}"
 		                                           WidthRequest="{OnIdiom Default=33, Tablet=28, Phone=28}"
 		                                           HorizontalOptions="End"
-		                                           VerticalOptions="Center" />
+		                                           VerticalOptions="Center">
+			                                    <Image.GestureRecognizers>
+				                                    <TapGestureRecognizer Tapped="Help_OnClicked" />
+			                                    </Image.GestureRecognizers>
+		                                    </Image>
 		                                    <Label Text="{Binding BackGroundColor}"
 		                                           BackgroundColor="{Binding BgColor, Mode=Default}"
 		                                           TextColor="{Binding FntColor, Mode=Default}"

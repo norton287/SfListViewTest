@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using Syncfusion.ListView.XForms;
 using Syncfusion.XForms.Expander;
 using Xamarin.Essentials;
@@ -75,6 +76,11 @@ namespace SfListViewTest
 
 
 
+        }
+
+        private void Help_OnClicked(object sender, EventArgs e)
+        {
+             var test = true;
         }
     }
 }
