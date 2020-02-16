@@ -17,7 +17,7 @@ namespace SfListViewTest
             set
             {
                 _isExpanded = value;
-                OnPropertyChanged("IsExpanded");
+                OnPropertyChanged(nameof(IsExpanded));
             }
         }
 

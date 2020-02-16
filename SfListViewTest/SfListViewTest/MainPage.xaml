@@ -16,21 +16,25 @@
              x:Class="SfListViewTest.MainPage"
              x:Name="XamlPage"
              BackgroundColor="Beige">
-    <ContentPage.Resources>
+	<ContentPage.Resources>
         <ResourceDictionary>
             <models:NegateBooleanConverter
                 x:Key="Inverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand"
+        <Grid HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"
                      Margin="15,15,15,15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
             <StackLayout>
                 <expander:SfExpander x:Name="Expander"
                                              HeaderBackgroundColor="Transparent"
                                              BackgroundColor="Transparent"
-                                             DynamicSizeMode="Content"
+                                             DynamicSizeMode="{OnPlatform UWP=Content, Android=None, iOS=None}"
                                              IsExpanded="{Binding IsExpanded, Mode=TwoWay}"
                                              Margin="15,0,15,0">
                     <expander:SfExpander.Header>
@@ -145,8 +149,8 @@
                     </expander:SfExpander.Content>
                 </expander:SfExpander>
             </StackLayout>
-            <StackLayout>
-                <listview:SfListView x:Name="listView" ItemSize="50"
+            <StackLayout Grid.Row="1">
+                <listview:SfListView x:Name="ListView" ItemSize="50"
                                      ItemsSource="{Binding ColorsObservableCollection, Mode=Default}"
                                      ItemTapped="ListView_OnItemTapped"
                                      SelectionMode="SingleDeselect"
@@ -191,13 +195,24 @@
                                             <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
-                                        <Label Text="{Binding BackGroundColor}"
-                                               Grid.Column="0"
-                                               Grid.Row="0"
-                                               BackgroundColor="{Binding BgColor, Mode=Default}"
-                                               TextColor="{Binding FntColor, Mode=Default}"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="Center" />
+	                                    <StackLayout Orientation="Horizontal"
+	                                                 Grid.Column="0"
+	                                                 Grid.Row="0"
+	                                                 HorizontalOptions="FillAndExpand"
+	                                                 VerticalOptions="FillAndExpand"
+	                                                 BackgroundColor="{Binding BgColor}">
+		                                    <Image x:Name="Help"
+		                                           Source="{StaticResource Cart}"
+		                                           BackgroundColor="Transparent"
+		                                           HeightRequest="{OnIdiom Default=33, Tablet=28, Phone=28}"
+		                                           WidthRequest="{OnIdiom Default=33, Tablet=28, Phone=28}"
+		                                           HorizontalOptions="End"
+		                                           VerticalOptions="Center" />
+		                                    <Label Text="{Binding BackGroundColor}"
+		                                           BackgroundColor="{Binding BgColor, Mode=Default}"
+		                                           TextColor="{Binding FntColor, Mode=Default}"
+		                                           HorizontalOptions="Center"
+		                                           VerticalOptions="Center" /></StackLayout>
                                         <Label Text="{Binding ColorName}"
                                                Grid.Column="0"
                                                Grid.Row="1"
@@ -213,6 +228,6 @@
                     </listview:SfListView.ItemTemplate>
                 </listview:SfListView>
             </StackLayout>
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

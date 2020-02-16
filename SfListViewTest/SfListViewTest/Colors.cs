@@ -14,7 +14,7 @@ namespace SfListViewTest
             {
                 _backGroundColor = value;
 
-                OnPropertyChanged("BackGroundColor");
+                OnPropertyChanged(nameof(BackGroundColor));
             }
         }
 
@@ -27,7 +27,7 @@ namespace SfListViewTest
             {
                 _colorName = value;
 
-                OnPropertyChanged("ColorName");
+                OnPropertyChanged(nameof(ColorName));
             }
         }
 
@@ -39,7 +39,7 @@ namespace SfListViewTest
             set
             {
                 _bgColor = value;
-                OnPropertyChanged("BgColor");
+                OnPropertyChanged(nameof(BgColor));
             }
         }
 
@@ -51,7 +51,7 @@ namespace SfListViewTest
             set
             {
                 _bdColor = value;
-                OnPropertyChanged("BdColor");
+                OnPropertyChanged(nameof(BdColor));
             }
         }
 
@@ -63,7 +63,7 @@ namespace SfListViewTest
             set
             {
                 _fntColor = value;
-                OnPropertyChanged("FntColor");
+                OnPropertyChanged(nameof(FntColor));
             }
         }
 
