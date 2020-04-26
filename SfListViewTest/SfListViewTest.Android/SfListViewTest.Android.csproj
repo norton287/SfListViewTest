@@ -42,11 +42,9 @@
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AndroidUseAapt2>true</AndroidUseAapt2>
-    <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
     <AndroidPackageFormat>apk</AndroidPackageFormat>
     <AndroidLinkTool>r8</AndroidLinkTool>
     <AotAssemblies>true</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>
   </PropertyGroup>
   <ItemGroup>
@@ -60,26 +58,26 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Syncfusion.Xamarin.Buttons">
-      <Version>17.4.0.49</Version>
+      <Version>18.1.0.45</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Core">
-      <Version>17.4.0.49</Version>
+      <Version>18.1.0.45</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Expander">
-      <Version>17.4.0.49</Version>
+      <Version>18.1.0.45</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfListView">
-      <Version>17.4.0.49</Version>
+      <Version>18.1.0.45</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Migration">
-      <Version>1.0.0</Version>
+      <Version>1.0.5</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.1.0" />
-    <PackageReference Include="Xamarin.AndroidX.Browser" Version="1.0.0" />
+    <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.2.0" />
+    <PackageReference Include="Xamarin.AndroidX.Browser" Version="1.2.0" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.1.0-preview06" />
     <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0" />
     <PackageReference Include="Xamarin.AndroidX.MediaRouter" Version="1.1.0" />
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.282-pre4" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.657" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.3" />
@@ -87,13 +85,12 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="28.0.0.3" />
     <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="28.0.0.3" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.4.0-pre2" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CustomLabelRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
