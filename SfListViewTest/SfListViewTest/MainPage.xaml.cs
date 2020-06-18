@@ -80,7 +80,9 @@ namespace SfListViewTest
 
         private void Help_OnClicked(object sender, EventArgs e)
         {
-             var test = true;
+#pragma warning disable 219
+	        var test = true;
+#pragma warning restore 219
         }
     }
 }
