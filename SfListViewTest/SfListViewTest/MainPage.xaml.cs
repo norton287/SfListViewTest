@@ -1,16 +1,18 @@
-﻿using System;
+﻿using Syncfusion.ListView.XForms;
+
+using System;
 using System.ComponentModel;
-using Syncfusion.ListView.XForms;
-using Syncfusion.XForms.Expander;
+
 using Xamarin.Essentials;
 using Xamarin.Forms;
+
 using ItemTappedEventArgs = Syncfusion.ListView.XForms.ItemTappedEventArgs;
 
 namespace SfListViewTest
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
-    [DesignTimeVisible(false)]
+	// Learn more about making custom code visible in the Xamarin.Forms previewer
+	// by visiting https://aka.ms/xamarinforms-previewer
+	[DesignTimeVisible(false)]
     public partial class MainPage : ContentPage, INotifyPropertyChanged
     {
         private readonly MainPageViewModel _viewModel;
