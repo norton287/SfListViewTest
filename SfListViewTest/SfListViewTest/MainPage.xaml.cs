@@ -128,8 +128,6 @@ public partial class MainPage : ContentPage, INotifyPropertyChanged
     {
         base.OnSizeAllocated(width, height); //must be called
 
-        if (_width == width && _height == height) return;
-
         _width = width;
         _height = height;
 
