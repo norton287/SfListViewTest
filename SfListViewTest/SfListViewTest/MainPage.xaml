@@ -156,6 +156,7 @@
                                          ItemTapped="ListView_OnItemTapped"
                                          SelectionMode="SingleDeselect"
                                          SelectionGesture="Tap"
+                                         AllowGroupExpandCollapse="True"
                                          HorizontalOptions="FillAndExpand"
                                          VerticalOptions="FillAndExpand">
                         <listview:SfListView.LayoutManager>

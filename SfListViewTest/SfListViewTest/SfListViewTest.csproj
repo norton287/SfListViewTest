@@ -4,6 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
       <LanguageVersion>Latest</LanguageVersion>
+      <LangVersion>latest</LangVersion>
+      <OutputType>Library</OutputType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -12,11 +14,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.Expander" Version="20.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="20.1.0.50" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.2" />
+    <None Remove="Images\GroupCollapse.png" />
+    <None Remove="Images\GroupExpand.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\GroupCollapse.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\GroupExpand.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.2.0.40" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="20.2.0.40" />
+    <PackageReference Include="Syncfusion.Xamarin.Expander" Version="20.2.0.40" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="20.2.0.40" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
   </ItemGroup>
 </Project>

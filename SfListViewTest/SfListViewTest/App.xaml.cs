@@ -4,6 +4,10 @@ namespace SfListViewTest
 {
     public partial class App : Application
     {
+        public static bool BeenDone { get; set; }
+
+        public static object LastItemTapped { get; set; }
+
         public App()
         {
             InitializeComponent();
